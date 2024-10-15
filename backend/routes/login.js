@@ -17,7 +17,7 @@ router.post('/',  async (req, res) => {
      // Find the user by username
     const user = await User.findOne({ username });
     if (!user) {
-      return res.status(401).json({ message: 'Invalid username'});
+      return res.status(401).json({ error: 'Invalid username'});
     }
 
     // Extract salt and hashed password from the user record
@@ -30,7 +30,7 @@ router.post('/',  async (req, res) => {
 
     // Check if the hashed password matches the stored password
     if (hashInput !== hash.split(':')[1]) {
-      res.status(401).json({ message: 'Invalid password' });
+      res.status(401).json({ error: 'Invalid password' });
       return;
     }
 
@@ -44,7 +44,7 @@ router.post('/',  async (req, res) => {
    
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: 'Internal Server error', error: err.message });
+    res.status(500).json({ error: 'Internal Server error', error: err.message });
   }
 })
 

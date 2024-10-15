@@ -25,7 +25,20 @@ const Login = ({ setToken }) => {
             }
 
         } catch (err) {
-            enqueueSnackbar(err.message, { variant: 'error' });
+            // enqueueSnackbar(err.message, { variant: 'error' });
+            
+            // Check if the error is an Axios error
+        if (axios.isAxiosError(err)) {
+            // Check if there is a response
+            if (err.response) {
+                // Get the specific error message from the response
+                enqueueSnackbar(err.response.data.error || 'Login failed', { variant: 'error' });
+            } else {
+                enqueueSnackbar('Login failed: ' + err.message, { variant: 'error' });
+            }
+        } else {
+            enqueueSnackbar('Login failed: ' + err.message, { variant: 'error' });
+        }
             console.error('Login failed', err);
         }
 
