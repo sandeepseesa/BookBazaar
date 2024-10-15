@@ -131,16 +131,50 @@ To run the project locally, follow these steps:
   ```bash
   bookstore-mern/
   ├── backend/
-  │   ├── models/        # Mongoose models (User, Book)
-  │   ├── routes/        # API routes (Auth, Books)
-  │   ├── config/        # Configuration files (Passport, JWT)
-  │   └── .env           # Environment variables
+  |   │   ├── models/            # Mongoose models (User, Book)
+  |   |   |   ├── BookModel.js
+  |   |   |   ├── User.js
+  |   │   ├── routes/            # API routes (Auth, Books)
+  |   |   |   ├── auth.js
+  |   |   |   ├── bookRoute.js
+  |   |   |   ├── login.js
+  |   |   |   ├── register.js
+  |   │   ├── config.js/         # Configuration files (Passport, JWT)
+  |   │   |   └── passport.js   
+  |   │   ├── .env               # Environment variables
+  |   |   ├── index.js
+  |   |   ├── package-lock.json
+  |   |   └── package.json
   └── frontend/
       ├── src/
-      │   ├── components/   # Reusable UI components (Navbar, BookCards)
-      │   ├── pages/        # Page components (Home, ShowBook, EditBook)
-      │   └── App.jsx       # Main React component
-      └── public/           # Static assets (favicon, images)
+      │   ├── components/         # Reusable UI components (Navbar, BookCards)
+      |   |   ├── home
+      |   |   |   ├── BookModal.jsx
+      |   |   |   ├── BookCard.jsx
+      |   |   |   ├── BookCard.jsx
+      |   |   |   ├── BookCard.jsx
+      |   |   ├── BookButton.jsx
+      |   |   ├── Navbar.jsx
+      |   |   └── Spinner.jsx
+      │   ├── pages/              # Page components (Home, ShowBook, EditBook)
+      |   |   ├── CreateBook.jsx
+      |   |   ├── DeleteBook.jsx
+      |   |   ├── EditBook.jsx
+      |   |   ├── Home.jsx
+      |   |   ├── Login.jsx
+      |   |   ├── NotFound.jsx
+      |   |   ├── Register.jsx
+      |   |   ├── ShowBook.jsx
+      │   └── App.jsx             # Main React component
+      |   ├── index.css
+      |   ├── main.jsx
+      |   ├── index.html
+      |   ├── package-lock.json
+      |   └── package.json
+      |   ├── postcss.config.js
+      |   └── tailwind.config.js
+      |   └── vite.config.js
+      └── public/                 # Static assets (favicon, images)
   ```
 
   ## Contributing
