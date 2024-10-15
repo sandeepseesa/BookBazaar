@@ -110,7 +110,7 @@ const Navbar = ({ isAuthenticated, handleLogout }) => {
                                     <hr className="border-gray-300 my-2" />
                                 </>
                             )}
-                            <Link
+                            {/* <Link
                                 to="/about"
                                 className="block text-lg font-medium text-gray-700 py-2 px-4 hover:bg-gray-200 rounded-md"
                                 onClick={closeMenu}
@@ -124,7 +124,7 @@ const Navbar = ({ isAuthenticated, handleLogout }) => {
                                 onClick={closeMenu}
                             >
                                 Contact
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                 </div>
