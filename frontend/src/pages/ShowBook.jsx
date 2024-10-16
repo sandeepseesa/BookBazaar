@@ -25,7 +25,7 @@ const ShowBook = () => {
       return;
     }
     setLoading(true);
-    axios.get(`http://localhost:3000/books/${id}`, {
+    axios.get(`https://bookbazaar-backend.onrender.com/books/${id}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then((res) => {

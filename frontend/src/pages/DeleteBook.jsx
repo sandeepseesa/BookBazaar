@@ -25,7 +25,7 @@ const DeleteBook = () => {
       return;
     }
     setLoading(true);
-    axios.delete(`http://localhost:3000/books/${id}`, {
+    axios.delete(`https://bookbazaar-backend.onrender.com/books/${id}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(() => {

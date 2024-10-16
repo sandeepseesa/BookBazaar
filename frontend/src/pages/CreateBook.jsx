@@ -32,7 +32,7 @@ const CreateBook = () => {
       publishYear,
     };
     setLoading(true);
-    axios.post(`http://localhost:3000/books`, data, {
+    axios.post(`https://bookbazaar-backend.onrender.com/books`, data, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(() => {

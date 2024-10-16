@@ -57,7 +57,7 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:3000/register', { username, password });
+      const response = await axios.post('https://bookbazaar-backend.onrender.com/register', { username, password });
       enqueueSnackbar('Registered Successfully!', { variant: 'success' });
       setError('');
 

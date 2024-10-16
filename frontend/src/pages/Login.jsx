@@ -12,7 +12,7 @@ const Login = ({ setToken }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3000/login', { username, password }, { withCredentials: true })
+            const response = await axios.post('https://bookbazaar-backend.onrender.com/login', { username, password }, { withCredentials: true })
 
             const token = response.data.token;
 

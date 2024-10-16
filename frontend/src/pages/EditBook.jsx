@@ -28,7 +28,7 @@ const EditBook = () => {
       return;
     }
     setLoading(true);
-    axios.get(`http://localhost:3000/books/${id}`,
+    axios.get(`https://bookbazaar-backend.onrender.com/books/${id}`,
       {
         headers: { Authorization: `Bearer ${token}` },
       })
@@ -60,7 +60,7 @@ const EditBook = () => {
     setLoading(true);
 
     try {
-      const response = await axios.put(`http://localhost:3000/books/${id}`, data, {
+      const response = await axios.put(`https://bookbazaar-backend.onrender.com/books/${id}`, data, {
         headers: { Authorization: `Bearer ${token}`, }
       });
       setLoading(false);

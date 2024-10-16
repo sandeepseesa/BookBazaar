@@ -123,7 +123,7 @@ const App = () => {
   // Handle logout by removing token from Cookies and updating authentication status
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:3000/logout', {}, { withCredentials: true });
+      await axios.post('https://bookbazaar-backend.onrender.com/logout', {}, { withCredentials: true });
       deleteCookie('token');
       setIsAuthenticated(false);
       enqueueSnackbar('Logged Out Successfully!', { variant: 'success' })

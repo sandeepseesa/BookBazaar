@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "serve": "vite preview"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "https://bookbazaar-backend.onrender.com",
   "dependencies": {
     "axios": "^1.7.7",
     "jwt-decode": "^4.0.0",
