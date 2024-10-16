@@ -23,6 +23,9 @@ This is a fully functional e-commerce **Bookstore** application built using the 
 
 This project is a **Bookstore** web application where users can register, log in, browse books, and perform CRUD operations such as creating, editing, and deleting books. The authentication is handled using **JWT tokens** and **Google OAuth** for seamless login, and the application is designed to be responsive for both desktop and mobile views.
 
+![HomePage1](./screenshots/Home.jpeg)
+![HomePage2](./screenshots/CardModal.jpeg)
+
 ## Features
 
 - **JWT Authentication**: Secure authentication with access and refresh tokens.
@@ -33,6 +36,13 @@ This project is a **Bookstore** web application where users can register, log in
 - **Token Expiry Handling**: Token expiry managed using `Axios` interceptors.
 - **Modern UI/UX**: Clean and modern design with Tailwind CSS and React Icons.
 - **Navigation Bar**: A responsive and dynamically updating Navbar.
+<p align="center">
+  <img src="./screenshots/Create.png" alt="Create" width="400"/>
+  <img src="./screenshots/Update.jpeg" alt="Update" width="400"/>
+  <img src="./screenshots/Read.jpeg" alt="Read" width="400"/>
+  <img src="./screenshots/DeleteBook.jpeg" alt="Delete" width="400"/>
+</p>
+
   
 ## Tech Stack
 
@@ -101,17 +111,44 @@ To run the project locally, follow these steps:
 
   - JWT Authentication: The user is authenticated via JWT tokens stored in cookies. The httpOnly option is used to ensure     that cookies are not accessible via JavaScript, adding a layer of security.
   - Google OAuth: You can log in using your Google account. On successful login, the system generates a JWT token.
+  ### Login
+   <p align="center">
+      <img src="./screenshots/Login1.png" alt="Login1" width="300"/>
+      <img src="./screenshots/Login2.png" alt="Login2" width="300"/>
+      <img src="./screenshots/Login3.png" alt="Login3" width="300"/>
+    </p>
+    
+  ### Register
+  <p align="center">
+    <img src="./screenshots/Register1.png" alt="Register1" width="300"/>
+    <img src="./screenshots/Register2.png" alt="Register2" width="300"/>
+    <img src="./screenshots/Register3.png" alt="Register3" width="300"/>
+  </p>
+
+  ### Notification
+  <p align="center">
+    <img src="./screenshots/Notification1.jpeg" alt="Notification1" width="300"/>
+    <img src="./screenshots/Notification2.jpeg" alt="Notification2" width="300"/>
+    <img src="./screenshots/Notification3.png" alt="Notification3" width="300"/>
+  </p>
 
   ## Responsive Design
 
   - The Navbar and CRUD operations are designed to be responsive. On mobile views, the navbar includes a sliding menu that opens from the right side.
   - Buttons, forms, and inputs are optimized for smaller screens to ensure smooth navigation and ease of use.
+    
+    <p align="center">
+      <img src="./screenshots/Responsive1.png" alt="Responsive1" width="400"/>
+      <img src="./screenshots/Responsive2.png" alt="Responsive2" width="400"/>
+    </p>
 
   ## Error Handling
 
   - Token expiration is handled using Axios Interceptors in the frontend. When a token expires, the user is alerted, and they are navigated to the login page.
   - The server sends meaningful error messages in the event of authentication or authorization issues.
 
+  ![ExpiredSession](./screenshots/SessionExpired.jpeg)
+  
   ## Token Expiry Handling
   
   If the JWT token expires before the cookie, it will cause failed authentication attempts. You can adjust expiration times by:
