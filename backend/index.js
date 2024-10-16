@@ -30,11 +30,13 @@ app.use(session({
 //Option 2: Allow Custom Origins
 app.use(cors(
   {
-    origin: 'https://bookbazaar-backend.onrender.com',
+    origin: 'https://bookbazaar-client.onrender.com',
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Authorization', 'Content-Type'],
   }
 ));
+
 
 app.use(passport.initialize());
 app.use(passport.session());
