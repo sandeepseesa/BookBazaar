@@ -49,7 +49,7 @@ app.use('/register', register);
 // Login
 app.use('/login', login);
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 // Route to start the Google authentication process
 app.get('/auth/google', passport.authenticate('google', {
