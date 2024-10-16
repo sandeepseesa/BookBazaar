@@ -30,7 +30,7 @@ app.use(session({
 //Option 2: Allow Custom Origins
 app.use(cors(
   {
-    origin: 'http://localhost:5173',
+    origin: 'https://bookbazaar-backend.onrender.com',
     credentials: true,
     allowedHeaders: ['Authorization', 'Content-Type'],
   }
