@@ -46,7 +46,7 @@ const Login = ({ setToken }) => {
 
     const handleGoogleLogin = async () => {
 
-        window.location.href = 'http://localhost:3000/auth/google';
+        window.location.href = 'https://bookbazaar-backend.onrender.com/auth/google';
     };
 
 
