@@ -1,8 +1,12 @@
 <h1 align="center">
 BookBazaar
 </h1>
+<p align="center">
+  <a href='https://bookbazaar-client.onrender.com'>Live Website</a> | 
+  <a href='https://github.com/sandeepseesa/BookBazaar'>GitHub Repository</a>
+</p>
 
-This is a fully functional e-commerce **Bookstore** application built using the MERN stack (MongoDB, Express, React, and Node.js). It includes features like JWT authentication, Google login integration, CRUD operations, and responsive design for both desktop and mobile views. 
+>This is a fully functional e-commerce **Bookstore** application built using the MERN stack (MongoDB, Express, React, and Node.js). It includes features like JWT authentication, Google login integration, CRUD operations, and responsive design for both desktop and mobile views. 
 
 ## Table of Contents
 
@@ -109,8 +113,8 @@ To run the project locally, follow these steps:
 
   ## Authentication
 
-  - JWT Authentication: The user is authenticated via JWT tokens stored in cookies. The httpOnly option is used to ensure     that cookies are not accessible via JavaScript, adding a layer of security.
-  - Google OAuth: You can log in using your Google account. On successful login, the system generates a JWT token.
+  - **JWT Authentication**: The user is authenticated via JWT tokens stored in cookies. The httpOnly option is used to ensure     that cookies are not accessible via JavaScript, adding a layer of security.
+  - **Google OAuth**: You can log in using your Google account. On successful login, the system generates a JWT token.
   ### Login
    <p align="center">
       <img src="./screenshots/Login1.png" alt="Login1" width="300"/>
@@ -144,7 +148,7 @@ To run the project locally, follow these steps:
 
   ## Error Handling
 
-  - Token expiration is handled using Axios Interceptors in the frontend. When a token expires, the user is alerted, and they are navigated to the login page.
+  - Token expiration is handled using **Axios Interceptors** in the frontend. When a token expires, the user is alerted, and they are navigated to the login page.
   - The server sends meaningful error messages in the event of authentication or authorization issues.
 
   ![ExpiredSession](./screenshots/SessionExpired.jpeg)
@@ -158,10 +162,10 @@ To run the project locally, follow these steps:
   
   ## Security Measures
   
-  - httpOnly Cookies: The JWT token is stored in cookies with the httpOnly flag, preventing client-side JavaScript access.
-  - Environment Variables: Sensitive keys such as JWT secret, Google client IDs, and MongoDB URIs are stored in environment variables.
-  - Token Expiration: The token expiry is handled to force re-authentication and protect the app from unauthorized access.
-  - CORS: Proper CORS configuration is applied to allow only trusted domains.
+  - **httpOnly Cookies**: The JWT token is stored in cookies with the httpOnly flag, preventing client-side JavaScript access.
+  - **Environment Variables**: Sensitive keys such as JWT secret, Google client IDs, and MongoDB URIs are stored in environment variables.
+  - **Token Expiration**: The token expiry is handled to force re-authentication and protect the app from unauthorized access.
+  - **CORS**: Proper CORS configuration is applied to allow only trusted domains.
   
   ## Folder Structure
 
