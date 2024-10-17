@@ -70,7 +70,7 @@ app.get('/auth/google/callback', passport.authenticate('google', {
     );
 
     // Redirect the user back to the frontend (can customize the path as needed)
-    res.redirect(`http://localhost:5173/?token=${encodeURIComponent(token)}`);
+    res.redirect(`https://bookbazaar-client.onrender.com/?token=${encodeURIComponent(token)}`);
   } else {
     res.status(400).json({ error: 'User authentication filed' })
   }
