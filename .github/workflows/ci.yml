@@ -1,52 +1,46 @@
-name: CI - Frontend & Backend
+name: CI and Deploy to Render
 
 on:
   push:
   workflow_dispatch:
 
 jobs:
-  backend-tests:
-    name: Run Backend Tests
+  backend:
     runs-on: ubuntu-latest
-
     defaults:
       run:
         working-directory: backend
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: '14'
 
-      - name: Install backend dependencies
-        run: npm install
+      - run: npm install
+      - run: npm test
 
-      - name: Run backend tests
-        run: npm test
-
-  frontend-tests:
-    name: Run Frontend Tests
+  frontend:
     runs-on: ubuntu-latest
-
     defaults:
       run:
         working-directory: frontend
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: '14'
 
-      - name: Install frontend dependencies
-        run: npm install
+      - run: npm install
+      - run: npm test
 
-      - name: Run frontend tests
-        run: npm test
+  deploy:
+    needs: [backend, frontend]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Render backend deploy
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_BACKEND }}
+
+      - name: Trigger Render frontend deploy
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_FRONTEND }}
